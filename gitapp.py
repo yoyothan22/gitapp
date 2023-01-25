@@ -1,12 +1,21 @@
+import dotenv
 import os
-URL = input("please input a git url : ")
-# PATH_TO_CLONE = input("where to clone?")
-if os.path.exists('/home/yonathane/project/gitapp/clone'):
-    os.system("rm -r /home/yonathane/project/gitapp/clone/*")
-    os.system("sudo rm -r /home/yonathane/project/gitapp/clone/.git")
-errormsg =  "error"
-CLONE = os.system("git clone"+ " "+URL+ " " + "~/project/gitapp/clone")
+from dotenv import load_dotenv
+load_dotenv()
+URL = (os.environ.get('URL'))
+print (URL)
+CLONE_TO_PATH = os.environ.get('CLONE_PATH')
+print (CLONE_TO_PATH)
+if os.path.exists(CLONE_TO_PATH):
+    os.system("rm -r" + " "+CLONE_TO_PATH+"/*")
+    os.system("sudo rm -r" " "+CLONE_TO_PATH+"/.git")
+    print('clean')
+REPO_TO_CLONE = os.system("git clone"+ " "+URL+ " " + CLONE_TO_PATH)
 print ("Finding Local Branches ...")
 SHOW_BRANCH = os.system("git branch")
-REPO_TO_CLONE = input("please provide the Branch : ")
-os.system("git merge"+" "+ REPO_TO_CLONE + "2>  ~/project/log.txt" ) 
+BRANCH_TO_MERGE = os.getenv('BRANCH')
+
+try:
+     os.system("git merge"+" "+ BRANCH_TO_MERGE)
+except:
+        os.system("git diff")
