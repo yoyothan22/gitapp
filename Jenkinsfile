@@ -13,7 +13,6 @@ pipeline {
         }
         stage('pip') { 
             steps {
-               sh 'sudo apt install python3-pip -y' 
                sh 'pip install python-dotenv'
                sh 'python3 -m venv env'
             }
