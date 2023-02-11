@@ -24,7 +24,7 @@ pipeline {
         stage('apptest') { 
             steps {
                
-                sh 'cd /var/lib/jenkins/workspace/gitapp'
+                sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
                 sh 'sudo python3 gitapp.py'
             }
         }
