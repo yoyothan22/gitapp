@@ -38,7 +38,7 @@ pipeline {
             sh '''
             
             cd /var/lib/jenkins/workspace/gitapp/clone
-            touch jenk.txt
+            sudo touch jenk.txt
             sudo git add .
             sudo git commit -m "jenktest"
             sudo git push -u origin main
