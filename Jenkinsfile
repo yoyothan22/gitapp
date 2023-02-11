@@ -13,7 +13,7 @@ pipeline {
         }
         stage('pip') { 
             steps {
-               sh 'cd /home/yoyo/Desktop/jemk' 
+              
                sh 'sudo apt install python3-pip'
                sh 'pip install python-dotenv'
                sh 'sudo python3 -m venv env'
@@ -24,7 +24,7 @@ pipeline {
         stage('apptest') { 
             steps {
                
-                sh 'cd /home/yoyo/Desktop/jemk'
+                sh 'cd /var/lib/jenkins/workspace/gitapp'
                 sh 'sudo python3 gitapp.py'
             }
         }
