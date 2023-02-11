@@ -15,7 +15,7 @@ pipeline {
             steps {
               
                sh 'sudo apt install python3-pip'
-               sh 'pip install python-dotenv'
+               sh 'pip3 install python-dotenv'
                sh 'sudo python3 -m venv env'
               
                 
@@ -44,7 +44,7 @@ pipeline {
             sudo touch jenk.txt
             sudo git add .
             sudo git commit -m "jenktest"
-            sudo git push -u origin main
+            sudo git remote add origin https://yoyothan22:Yoyo261099@@github.com/yoyothan22/gitapp.git
            
            
 
