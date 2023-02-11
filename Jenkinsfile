@@ -13,8 +13,12 @@ pipeline {
         }
         stage('pip') { 
             steps {
+               sh 'sudo apt install python3-pip'
                sh 'pip install python-dotenv'
-               sh 'python3 -m venv env'
+               sh 'sudo python3 -m venv env'
+               sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
+               sh 'source /var/lib/jenkins/workspace/gitapp/clone/env/bin/activate'
+                
             }
         }
         stage('apptest') { 
