@@ -38,6 +38,8 @@ pipeline {
             sh '''
             
             cd /var/lib/jenkins/workspace/gitapp/clone
+            sudo git config --global user.name "yoyothan22"
+            sudo git config --global user.email "yonathanethanit@gmail.com"
             sudo touch jenk.txt
             sudo git add .
             sudo git commit -m "jenktest"
