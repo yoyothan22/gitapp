@@ -22,7 +22,7 @@ pipeline {
             steps {
                
                 sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
-                sh 'sudo python3 /var/lib/jenkins/workspace/gitapp/clone/gitapp.py'
+                sh ' python3 /var/lib/jenkins/workspace/gitapp/clone/gitapp.py'
             }
         }
          stage('deploy') { 
