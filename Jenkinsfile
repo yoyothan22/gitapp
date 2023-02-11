@@ -17,15 +17,15 @@ pipeline {
                sh 'sudo apt install python3-pip'
                sh 'pip install python-dotenv'
                sh 'sudo python3 -m venv env'
-               sh 'source /home/yoyo/Desktop/jemk/env/bin/activate'
+              
                 
             }
         }
         stage('apptest') { 
             steps {
                
-                sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
-                sh ' python3 /var/lib/jenkins/workspace/gitapp/clone/gitapp.py'
+                sh 'cd /home/yoyo/Desktop/jemk'
+                sh 'sudo python3 gitapp.py'
             }
         }
          stage('deploy') { 
