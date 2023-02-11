@@ -3,9 +3,9 @@ pipeline {
     stages {
     stage('clone'){
             steps{
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/*'
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.git'
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.env'
+//                     sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/*'
+//                     sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.git'
+//                     sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.env'
                     sh 'sudo git clone https://github.com/yoyothan22/gitapp /var/lib/jenkins/workspace/gitapp/clone'
             }        
 
