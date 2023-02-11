@@ -13,11 +13,11 @@ pipeline {
         }
         stage('pip') { 
             steps {
+               sh 'cd /home/yoyo/Desktop/jemk' 
                sh 'sudo apt install python3-pip'
                sh 'pip install python-dotenv'
                sh 'sudo python3 -m venv env'
-               sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
-               sh 'source /var/lib/jenkins/workspace/gitapp/clone/env/bin/activate'
+               sh 'source /home/yoyo/Desktop/jemk/env/bin/activate'
                 
             }
         }
