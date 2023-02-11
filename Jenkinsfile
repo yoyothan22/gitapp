@@ -3,10 +3,10 @@ pipeline {
     stages {
     stage('clone'){
             steps{
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitappv1/clone/*'
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitappv1/clone/.git'
-                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitappv1/clone/.env'
-                    sh 'sudo git clone https://github.com/yoyothan22/gitapp /var/lib/jenkins/workspace/gitappv1/clone'
+                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/*'
+                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.git'
+                    sh 'sudo rm -rf  /var/lib/jenkins/workspace/gitapp/clone/.env'
+                    sh 'sudo git clone https://github.com/yoyothan22/gitapp /var/lib/jenkins/workspace/gitapp/clone'
             }        
 
        
@@ -21,8 +21,8 @@ pipeline {
         stage('apptest') { 
             steps {
                
-                sh 'cd /var/lib/jenkins/workspace/gitappv1/clone'
-                sh 'python3 /var/lib/jenkins/workspace/gitappv1/clone/gitapp.py'
+                sh 'cd /var/lib/jenkins/workspace/gitapp/clone'
+                sh 'sudo python3 /var/lib/jenkins/workspace/gitapp/clone/gitapp.py'
             }
         }
          stage('deploy') { 
@@ -37,9 +37,13 @@ pipeline {
         steps {
             sh '''
             
-            cd /var/lib/jenkins/workspace/gitappv1/clone
+            cd /var/lib/jenkins/workspace/gitapp/clone
+            touch jenk.txt
+            sudo git add .
+            sudo git commit -m "jenktest"
+            sudo git push -u origin main
            
-            ssh -T git@github.com
+           
 
             '''
     }
