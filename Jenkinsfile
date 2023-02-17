@@ -46,7 +46,7 @@ pipeline {
             sudo git add .
             sudo git commit -m "jenktest"
             git remote set-url origin git@github.com:yoyothan22/gitapp.git
-            git push
+            git push -u origin master
            
 
             '''
