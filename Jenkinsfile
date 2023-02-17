@@ -43,8 +43,8 @@ pipeline {
             cd /var/lib/jenkins/workspace/gitapp/clone
             sudo touch jenk.txt
             git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
-            git add .
-            git commit -m "jenktest"
+            sudo git add .
+            sudo git commit -m "jenktest"
             git remote set-url origin git@github.com:yoyothan22/gitapp.git
             git push
            
