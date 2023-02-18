@@ -45,10 +45,6 @@ pipeline {
             git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
             sudo git add .
             sudo git commit -m "jenktest"
-            sudo git remote set-url origin https://yoyothan22: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@github.com/yoyothan22/gitapp.git
-          
-
-          
             sudo git push 
 
             '''
