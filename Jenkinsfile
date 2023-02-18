@@ -45,7 +45,9 @@ pipeline {
             git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
             sudo git add .
             sudo git commit -m "jenktest"
-            sudo sh push.sh
+            sh /home/yonathane/project/push.sh
+
+         
 
             '''
     }
