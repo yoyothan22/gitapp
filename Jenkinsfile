@@ -36,7 +36,7 @@ pipeline {
         }
        
         stage('push'){
-            step{
+            steps{
                 sh '''
             git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
             sudo git add .
