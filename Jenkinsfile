@@ -47,11 +47,6 @@ pipeline {
             sudo git commit -m "jenktest"
             sudo sh push.sh
 
-
-
-
-            sudo git push 
-
             '''
     }
 }
