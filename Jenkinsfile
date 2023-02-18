@@ -46,7 +46,7 @@ pipeline {
             sudo git add .
             sudo git commit -m "jenktest"
           
-            sudo git push -u origin main
+            sudo git push 
 
             '''
     }
