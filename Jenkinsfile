@@ -36,22 +36,7 @@ pipeline {
         }
        
 
-    stage('Push') {
-        steps {
-            sh '''
-            
-            cd /var/lib/jenkins/workspace/gitapp/clone
-            sudo touch jenk.txt
-            git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
-            sudo git add .
-            sudo git commit -m "jenktest"
-            sh /home/yonathane/project/push.sh
-
-         
-
-            '''
-    }
-}
+ 
 
 }
         
