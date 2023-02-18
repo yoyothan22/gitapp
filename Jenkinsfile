@@ -43,7 +43,6 @@ pipeline {
             sudo touch jenk.txt
             sudo git add .
             sudo git commit -m "jenktest"
-            sudo sh push.sh
             sh /home/yonathane/project/push.sh
          
          '''
