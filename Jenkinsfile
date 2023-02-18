@@ -38,7 +38,9 @@ pipeline {
         stage('push'){
             steps{
                 sh '''
+            cd /var/lib/jenkins/workspace/gitapp/clone
             git config --global --add safe.directory /var/lib/jenkins/workspace/gitapp/clone
+            sudo touch jenk.txt
             sudo git add .
             sudo git commit -m "jenktest"
             sudo sh push.sh
